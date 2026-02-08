@@ -8,3 +8,4 @@ public interface UserSelectionRepository extends JpaRepository<UserSelection, Lo
 
     Optional<UserSelection> findBySessionId(String sessionId);
 }
+

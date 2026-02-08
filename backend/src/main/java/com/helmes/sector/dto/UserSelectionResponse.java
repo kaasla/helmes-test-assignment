@@ -14,3 +14,4 @@ public record UserSelectionResponse(
     LocalDateTime updatedAt
 ) {
 }
+

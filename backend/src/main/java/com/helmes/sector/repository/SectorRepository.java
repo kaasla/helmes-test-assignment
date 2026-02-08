@@ -10,3 +10,4 @@ public interface SectorRepository extends JpaRepository<Sector, Long> {
     @Query("SELECT s FROM Sector s LEFT JOIN FETCH s.children WHERE s.parent IS NULL ORDER BY s.name")
     List<Sector> findAllRootsWithChildren();
 }
+

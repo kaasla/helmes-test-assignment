@@ -34,3 +34,4 @@ public class Sector {
     @OrderBy("name ASC")
     private List<Sector> children = new ArrayList<>();
 }
+

@@ -10,3 +10,4 @@ public class SectorSelectionApplication {
         SpringApplication.run(SectorSelectionApplication.class, args);
     }
 }
+

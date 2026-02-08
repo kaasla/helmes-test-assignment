@@ -10,3 +10,4 @@ public record SectorNode(
     List<SectorNode> children
 ) {
 }
+

@@ -64,3 +64,4 @@ public class UserSelection {
         this.updatedAt = LocalDateTime.now();
     }
 }
+
