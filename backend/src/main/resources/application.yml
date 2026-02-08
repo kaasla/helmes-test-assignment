@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/helmes
+    username: helmes
+    password: helmes
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+    timeout: 30m
+
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        same-site: lax
+        http-only: true
+
+springdoc:
+  api-docs:
+    path: /api/v1/docs
+  swagger-ui:
+    path: /api/v1/swagger-ui
+
+logging:
+  level:
+    com.helmes: DEBUG
+    org.hibernate.SQL: DEBUG
