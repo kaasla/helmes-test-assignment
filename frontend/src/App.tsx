@@ -22,7 +22,6 @@ const App = () => {
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [initialized, setInitialized] = useState(false);
 
-  /* Refill form from saved selection (runs once when data arrives) */
   if (selection && !initialized) {
     setName(selection.name);
     setSelectedSectors(new Set(selection.sectorIds));

@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { SectorNode, UserSelectionResponse } from "@/lib/types";
-import App from "./App";
+import App from "@/App";
 
 const mockSectors: SectorNode[] = [
   {
@@ -39,7 +39,7 @@ vi.mock("@/lib/api", () => ({
 }));
 
 const api = await import("@/lib/api");
-const { fetchSectors, fetchMySelection, createSelection } = api as {
+const { fetchSectors, fetchMySelection, createSelection } = api as unknown as {
   fetchSectors: ReturnType<typeof vi.fn>;
   fetchMySelection: ReturnType<typeof vi.fn>;
   createSelection: ReturnType<typeof vi.fn>;
@@ -48,8 +48,6 @@ const { fetchSectors, fetchMySelection, createSelection } = api as {
 beforeEach(() => {
   vi.clearAllMocks();
 });
-
-/* ── Tests ────────────────────────────────────────────────────────── */
 
 describe("App", () => {
   it("shows loading state initially", () => {
@@ -102,12 +100,9 @@ describe("App", () => {
     });
 
     const checkboxes = screen.getAllByRole("checkbox");
-    // Manufacturing (1) and Construction materials (19) should be checked
     expect(checkboxes[0]).toBeChecked();
     expect(checkboxes[1]).toBeChecked();
-    // Service (2) should not be checked
     expect(checkboxes[2]).not.toBeChecked();
-    // Agree to terms should be checked
     expect(checkboxes[3]).toBeChecked();
   });
 

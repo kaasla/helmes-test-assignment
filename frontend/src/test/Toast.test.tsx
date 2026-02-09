@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import Toast from "./Toast";
+import Toast from "@/components/Toast";
 
 describe("Toast", () => {
   it("renders message when visible", () => {

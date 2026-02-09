@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import type { SectorNode } from "@/lib/types";
-import SectorSelect from "./SectorSelect";
+import SectorSelect from "@/components/SectorSelect";
 
 const sectors: SectorNode[] = [
   {
@@ -30,11 +30,8 @@ describe("SectorSelect", () => {
     render(<SectorSelect sectors={sectors} selected={new Set([1, 18])} onChange={vi.fn()} />);
 
     const checkboxes = screen.getAllByRole("checkbox");
-    // Manufacturing (1) is checked
     expect(checkboxes[0]).toBeChecked();
-    // Construction materials (19) is not checked
     expect(checkboxes[1]).not.toBeChecked();
-    // Electronics and Optics (18) is checked
     expect(checkboxes[2]).toBeChecked();
   });
 
