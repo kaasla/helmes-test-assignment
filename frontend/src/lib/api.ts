@@ -1,4 +1,9 @@
-import type { ApiError, SectorNode, UserSelectionRequest, UserSelectionResponse } from "@/lib/types";
+import type {
+  ApiError,
+  SectorNode,
+  UserSelectionRequest,
+  UserSelectionResponse,
+} from "@/lib/types";
 
 const BASE_URL = "/api/v1";
 
