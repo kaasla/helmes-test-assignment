@@ -108,4 +108,6 @@ pnpm test
 
 ## Session
 
-User data is tied to the browser session. To start fresh, clear the `SESSION` cookie in your browser's developer tools (Application → Cookies) or open an incognito window.
+User data is tied to the browser session ID. To start fresh, clear the `SESSION` cookie in your browser's developer tools (Application -> Cookies) or open an incognito window.
+This creates a new session identity; it does not delete previously saved rows from the database.
+Deleting persisted selection records is outside the scope of this assignment.
