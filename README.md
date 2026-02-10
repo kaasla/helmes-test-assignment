@@ -41,11 +41,24 @@ docker compose down -v
 
 ### Database
 
-Create a local PostgreSQL database:
+Set up a local PostgreSQL database (Flyway-based, recommended):
 
 ```sql
 CREATE USER helmes WITH PASSWORD 'helmes';
 CREATE DATABASE helmes OWNER helmes;
+```
+
+Alternative: restore the provided dump (`dump.sql`) into a fresh local database:
+
+```bash
+psql -U helmes -d helmes -f dump.sql
+```
+
+If you restore from `dump.sql`, run backend with Flyway disabled (the dump already contains the schema and seed data):
+
+```bash
+cd backend
+SPRING_FLYWAY_ENABLED=false ./mvnw spring-boot:run
 ```
 
 ### Backend
@@ -96,13 +109,3 @@ pnpm test
 ## Session
 
 User data is tied to the browser session. To start fresh, clear the `SESSION` cookie in your browser's developer tools (Application → Cookies) or open an incognito window.
-
-## Database Dump
-
-A full database dump is provided in `dump.sql` (schema + sector seed data). To restore it into a fresh PostgreSQL database:
-
-```bash
-psql -U helmes -d helmes -f dump.sql
-```
-
-When running via Docker, this is not needed — Flyway migrations create the schema and seed the data automatically on startup.
