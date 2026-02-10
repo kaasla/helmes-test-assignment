@@ -33,7 +33,7 @@ To stop and remove all containers and volumes:
 docker compose down -v
 ```
 
-- **Frontend:** http://localhost:3000
+- **Frontend:** http://localhost:5173
 - **Backend:** http://localhost:8080
 - **API docs:** http://localhost:8080/api/v1/swagger-ui
 
