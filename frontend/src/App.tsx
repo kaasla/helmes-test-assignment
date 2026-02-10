@@ -42,8 +42,6 @@ const App = () => {
 
       if (success) {
         showToast(selection ? "Selection updated successfully" : "Selection saved successfully");
-      } else {
-        showToast("Please fix the errors below", "error");
       }
     },
     [name, selectedSectors, agreeToTerms, save, clearErrors, showToast, selection],
@@ -168,10 +166,6 @@ const App = () => {
             {saving ? "Saving..." : "Save"}
           </button>
         </form>
-
-        <p className="mt-6 text-center text-xs text-slate-400">
-          Your data is stored for this session only.
-        </p>
       </div>
 
       <Toast message={toast.message} type={toast.type} visible={toast.visible} />

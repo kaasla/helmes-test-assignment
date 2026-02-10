@@ -93,6 +93,10 @@ pnpm test
 
 16 unit tests covering components and the main App.
 
+## Session
+
+User data is tied to the browser session. To start fresh, clear the `SESSION` cookie in your browser's developer tools (Application → Cookies) or open an incognito window.
+
 ## Database Dump
 
 A full database dump is provided in `dump.sql` (schema + sector seed data). To restore it into a fresh PostgreSQL database:
